@@ -1,0 +1,64 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #ebebeb;
+}
+
+.btn{
+    font-weight: bold;
+
+    width: 155px;
+    margin-right: 5px;
+    margin-left:  5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+
+    border-width: 5px;
+    border-radius: 50px;
+    background-color: transparent
+}
+
+.btn:hover{
+    color: crimson;
+    text-shadow: 1px 1px black;
+}
+
+.container-fluid{
+    height: 100%;
+    width: 100%;
+}
+
+.logo{
+    margin: auto;
+    margin-top: 12%;
+
+    font-family: 'Caveat', cursive;
+    font-size: 110px;
+    font-weight: 600;
+}
+
+
+#logo-text{
+    display: inline-block;
+    line-height: 1.15;
+    position: relative;
+}
+
+#logo-text:after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    border: solid 5px crimson;
+    border-color: #cb1829 transparent transparent;
+    border-radius: 50%;
+
+/* css for curved underline adapted from
+https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underline/51148652*/
+}
