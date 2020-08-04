@@ -2,30 +2,28 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #ebebeb;
-}
-
-.btn{
-    font-weight: bold;
-
-    width: 155px;
-    margin-right: 5px;
-    margin-left:  5px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-
     font-family: 'Bangers', cursive;
-    letter-spacing: 2px;
-
-    border-width: 5px;
-    border-radius: 50px;
-    background-color: transparent
 }
 
-.btn:hover{
-    color: crimson;
-    text-shadow: 1px 1px black;
+.navbar{
+    position: fixed;
+    top: 0;
 }
+
+#navbar-toggle{
+    position: fixed;
+    width: 20%;
+    margin-top: 50px;
+    padding-left: 10px;
+    top: 0;
+
+    font-weight: bold;
+}
+
+#navbar-content{
+    background-color: transparent !important;
+}
+
 
 .container-fluid{
     height: 100%;
@@ -39,6 +37,12 @@ html, body {
     font-family: 'Caveat', cursive;
     font-size: 110px;
     font-weight: 600;
+}
+
+@media (max-width:400px) {
+    .logo{
+        font-size: 75px;
+    }
 }
 
 
@@ -62,3 +66,166 @@ html, body {
 /* css for curved underline adapted from
 https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underline/51148652*/
 }
+
+.about-rules{
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.collapse{
+    background-color: transparent;
+}
+
+#rule-image:hover #rule-image-path{
+    fill-rule: nonzero;
+}
+
+#about-image:hover #about-image-path{
+    fill-rule: nonzero;
+}
+
+.flip {
+    transform: rotate(-180deg);
+}
+
+.game-col{
+    text-align: center;
+}
+#play-btn{
+    font-weight: bold;
+
+    width: 155px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+
+    border-width: 5px;
+    border-radius: 50px;
+    background-color: transparent
+}
+
+
+/* css for slider from
+https://www.w3schools.com/howto/howto_css_switch.asp
+*/
+
+.switch {
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 0 #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.nav-item{
+    margin-bottom: 10px;
+}
+
+.grid-col{
+    text-align: center;
+}
+
+
+
+.grid-content-row{
+}
+.grid-item {
+    background-color: white;
+    margin: 5px;
+    width: 23%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 0.75vw;
+    border-radius: 1.5vw;
+
+    position: relative;
+
+    font-size: 4vw;
+}
+.grid-item:before{
+    content: "";
+    padding-top: 50%;
+}
+
+@media (max-width:400px) {
+    .grid-item{
+        height: 50px;
+    }
+}
+
+footer{
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+

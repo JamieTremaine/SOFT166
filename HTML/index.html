@@ -1,37 +1,151 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SOFT166 Simon Says</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/index.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../CSS/index.css">
+
     <script src="../JS/script.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="logo row justify-content-center">
-            <div class="col-auto">
-                <p id="logo-text">Soft166</p>
-             </div>
+<!--Navbar-->
+<nav class="navbar navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<div class="collapse" id="navbar-toggle">
+    <p>Colour blind settings</p>
+    <div id="navbar-content" class="bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                Protanopia
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="nav-item">
+                Deuteranopia
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li class="nav-item">
+                Tritanopia
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="logo row justify-content-center">
+        <div class="col-auto">
+            <p id="logo-text">Soft166</p>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a class="btn btn-lg btn-outline-dark btn-light bg-light"
-                    href="/SOFT166/HTML/about.html">About</a>
-                <a class="btn btn-lg btn-outline-dark btn-light bg-light"
-                    href="/SOFT166/HTML/application.html">Application</a>
+    </div>
+
+    <!--Rules/About-->
+    <div class="row justify-content-center">
+        <div class="about-rules col-md-4">
+            <div class="about">
+                <h2>About</h2>
+                <div class="collapse" id="about-text">
+                    <div class="card-body">
+                        A game created for the practise element of the SOFT 166 module. The game is designed to
+                        utilise hue lights in the SMB103 room. Created using bootstrap and JQuery.
+                    </div>
+                </div>
+                <a data-toggle="collapse" href="#about-text" role="button" aria-expanded="false" aria-controls="about-text">
+                    <svg id="about-image" class="flippable" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path id="about-image-path" fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="rules">
+                <h2>Rules</h2>
+                <div class="collapse" id="rules-text">
+                    <div class="card-body">
+                        After pressing play 3 lights will turn on in the room.
+                        Your job is to memorize which lights were turned on and in what order
+                        they appeared. Then click on the square that matches where in the room the light is. Complete all 5 rounds to win.
+                    </div>
+                </div>
+                <a data-toggle="collapse" href="#rules-text" role="button" aria-expanded="false" aria-controls="rules-text">
+                    <svg id="rule-image" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        <path id="rule-image-path" fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
+
+    <!--Game-->
+    <div class="btn-row row justify-content-center">
+        <div class="game-col col-8">
+            <button id="play-btn" type="button" class="btn btn-lg btn-outline-dark btn-light bg-light">Play</button>
+        </div>
+    </div>
+
+    <div class="grid-style-row row justify-content-center">
+        <div class="grid-col col-9">
+            <script>$('.grid-col').hide()</script>
+            <div class="grid-container">
+                <div class="grid-content-row row justify-content-center">
+                    <div class="grid-item col-lg-auto">one</div>
+                    <div class="grid-item col-lg-auto">two</div>
+                    <div class="grid-item col-lg-auto">three</div>
+                </div>
+                <div class="grid-content-row row justify-content-center">
+                    <div class="grid-item col-lg-auto">four</div>
+                    <div class="grid-item col-lg-auto">five</div>
+                    <div class="grid-item col-auto">six</div>
+                </div>
+                <div class="grid-content-row row justify-content-center">
+                    <div class="grid-item col-lg-auto">seven</div>
+                    <div class="grid-item col-lg-auto">eight</div>
+                    <div class="grid-item col-lg-auto">nine</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 <footer>
         <p>Created for SOFT166</p>
 </footer>
+
+
 </html>
