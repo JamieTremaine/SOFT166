@@ -7,8 +7,11 @@ html, body {
 
 .navbar{
     position: fixed;
+    margin-top: 0vh;
     top: 0;
 }
+
+
 
 #navbar-toggle{
     position: fixed;
@@ -23,7 +26,6 @@ html, body {
 #navbar-content{
     background-color: transparent !important;
 }
-
 
 .container-fluid{
     height: 100%;
@@ -68,6 +70,7 @@ https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underl
 }
 
 .about-rules{
+    font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
     font-weight: lighter;
@@ -156,7 +159,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 0 #2196F3;
+    box-shadow: 0 0 0px #2196F3;
 }
 
 input:checked + .slider:before {
@@ -183,9 +186,6 @@ input:checked + .slider:before {
 }
 
 
-
-.grid-content-row{
-}
 .grid-item {
     background-color: white;
     margin: 5px;
@@ -217,7 +217,7 @@ input:checked + .slider:before {
 }
 
 footer{
-    bottom: 0;
+    bottom: 0vh;
 }
 
 

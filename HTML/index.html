@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="../CSS/index.css">
 
+    <script src="../JS/game.js"></script>
+    <script src="../JS/lights.js"></script>
     <script src="../JS/script.js"></script>
 </head>
 
@@ -32,21 +34,21 @@
             <li class="nav-item">
                 Protanopia
                 <label class="switch">
-                    <input type="checkbox">
+                    <input id="protanopia" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </li>
             <li class="nav-item">
                 Deuteranopia
                 <label class="switch">
-                    <input type="checkbox">
+                    <input id="deuteranopia" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </li>
             <li class="nav-item">
                 Tritanopia
                 <label class="switch">
-                    <input type="checkbox">
+                    <input id="tritanopia" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </li>
@@ -90,7 +92,7 @@
                     </div>
                 </div>
                 <a data-toggle="collapse" href="#rules-text" role="button" aria-expanded="false" aria-controls="rules-text">
-                    <svg id="rule-image" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="rule-image" class="flippable" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
                         <path id="rule-image-path" fill-rule="evenodd" d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
                     </svg>
                 </a>
@@ -110,34 +112,25 @@
             <script>$('.grid-col').hide()</script>
             <div class="grid-container">
                 <div class="grid-content-row row justify-content-center">
-                    <div class="grid-item col-lg-auto">one</div>
-                    <div class="grid-item col-lg-auto">two</div>
-                    <div class="grid-item col-lg-auto">three</div>
+                    <div id="1" class="grid-item col-lg-auto">one</div>
+                    <div id="2" class="grid-item col-lg-auto">two</div>
+                    <div id="3" class="grid-item col-lg-auto">three</div>
                 </div>
                 <div class="grid-content-row row justify-content-center">
-                    <div class="grid-item col-lg-auto">four</div>
-                    <div class="grid-item col-lg-auto">five</div>
-                    <div class="grid-item col-auto">six</div>
+                    <div id="4" class="grid-item col-lg-auto">four</div>
+                    <div id="5" class="grid-item col-lg-auto">five</div>
+                    <div id="6" class="grid-item col-auto">six</div>
                 </div>
                 <div class="grid-content-row row justify-content-center">
-                    <div class="grid-item col-lg-auto">seven</div>
-                    <div class="grid-item col-lg-auto">eight</div>
-                    <div class="grid-item col-lg-auto">nine</div>
+                    <div id="7" class="grid-item col-lg-auto">seven</div>
+                    <div id="8" class="grid-item col-lg-auto">eight</div>
+                    <div id="9" class="grid-item col-lg-auto">nine</div>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
 
 
 
