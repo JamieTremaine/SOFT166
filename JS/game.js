@@ -15,6 +15,7 @@ function CreateSequence(){
         var GeneratedLightID = Math.floor((Math.random() * 9) + 1);
         Sequence.push(GeneratedLightID);
     }
+    window.alert(Sequence);
     return Sequence;
 }
 
@@ -36,18 +37,33 @@ function CheckGuess(ID){
 
 function StartNextRound(){
     GameInstance.Round++;
-    CreateSequence();
-    PlaySequence();
+    ResetGrid();
+    GameInstance.seqence = CreateSequence();
+    GameInstance.NextInSequence = 0;
+    /*PlaySequence();*/
 }
 
 function ResetRound(){
-    CreateSequence();
-    PlaySequence();
+    GameInstance.seqence = CreateSequence();
+    GameInstance.NextInSequence = 0;
+    /*PlaySequence();*/
+}
+
+function EndOfSequence(){
+    if(GameInstance.Round + 2 > GameInstance.NextInSequence){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
 
 
+
+
+
 function WasLastRound(){
-    if(GameInstance.Round = 5){
+    if(GameInstance.Round == 3){
         return true;
     }
     else { return false; }

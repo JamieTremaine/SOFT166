@@ -16,26 +16,53 @@ function UncheckOtherSettings(ID){
             document.getElementById("protanopia").checked = false;
             document.getElementById("deuteranopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColours = DefaultColours;
+            LightColoursCIE = DefaultColoursCIE;
+            LightColoursHEX = DefaultColoursHex;
             break;
 
         case "protanopia":
             document.getElementById("deuteranopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColours = Protanopia;
+            LightColoursCIE = ProtanopiaCIE;
+            LightColoursHEX = ProtanopiaHex;
             break;
 
         case "deuteranopia":
             document.getElementById("protanopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColours = Deuteranopia;
+            LightColoursCIE = DeuteranopiaCIE;
+            LightColoursHEX = DeuteranopiaHex;
             break;
 
         case "tritanopia":
             document.getElementById("protanopia").checked = false;
             document.getElementById("deuteranopia").checked = false;
-            LightColours = Tritanopia;
+            LightColoursCIE = TritanopiaCIE;
+            LightColoursHEX = TritanopiaHex;
             break;
+    }
+}
+function ToggleGrid(ID, type) {
+    ID = "#"+ID;
+
+    if(type == "correct"){
+        var Colour =  LightColoursHEX[GameInstance.NextInSequence];
+        $( ID ).animate( {backgroundColor: Colour}, "slow" ); /* Background colour animations provided by JQuery colour/ Full reference in file*/
+        $( ID ).animate( {backgroundColor: "white"}, "slow" );
+    }
+    else{
+        ToggleAllPageGrids("red")
+    }
+
+}
+function ToggleAllPageGrids(Colour){
+    $( ".grid-item" ).animate( {backgroundColor: Colour}, "slow" );
+    $( ".grid-item" ).animate( {backgroundColor: "white"}, "slow" );
+
+}
+function ResetGrid(){
+    for(var i=1; i <10; i++){
+        document.getElementById(i).style.backgroundColor = "white";
     }
 }
 
@@ -49,16 +76,20 @@ function ProcessUserGuess(element){
 
     if (CorrectGuess)
     {
-        ToggleLight(GuessID, LightColours[GameInstance.NextInSequence])
+        ToggleGrid(GuessID, "correct");
+        ToggleLight(GuessID, LightColoursCIE[GameInstance.NextInSequence]);
         GameInstance.NextInSequence++;
-
-        if(EndOfSequence()) {
-            WinRoundEffects();
-        }
     }
     else{
+        ToggleGrid(GuessID, "wrong");
         ToggleLight(GuessID, "red")
-        ResetRound();
+    }
+
+    if(EndOfSequence() == true) {
+        /*WinRoundEffects();*/
+    }
+    else{
+        return;
     }
 
     if(WasLastRound())
@@ -86,7 +117,7 @@ $(document).ready(function () {
     $('input[type="checkbox"]').click(function(){
         if($(this).prop("checked") === true){
             UncheckOtherSettings(this.id);
-            SetLightColours(ID);
+            /*SetLightColours(ID);*/
         }
         else if($(this).prop("checked") == false){
             UncheckOtherSettings("none");

@@ -1,19 +1,25 @@
-const DefaultColours = [0,0,0,0,0];
-const Protanopia     = [1,0,0,0,0];
-const Deuteranopia   = [2,0,0,0,0];
-const Tritanopia     = [3,0,0,0,0]
+const DefaultColoursCIE = [0,0,0,0,0];
+const ProtanopiaCIE     = [1,0,0,0,0];
+const DeuteranopiaCIE   = [2,0,0,0,0];
+const TritanopiaCIE     = [3,0,0,0,0]
 
-var LightColours = DefaultColours;
+const DefaultColoursHex = ["#008000","#9400D3","#0000FF","#FFA500","#FFFF00"];
+const ProtanopiaHex     = [1,0,0,0,0];
+const DeuteranopiaHex   = ["#FFFF00","#00d3d3","#0000FF","#FFFF00","#00d3d3"];
+const TritanopiaHex     = [3,0,0,0,0]
 
+const RedDefaultHex = "red";
+const RedProtanopiaHex = "#b37400";
+const RedDeuteranopiaHex = "red";
+const RedTritanopiaHex = "red";
 
-function PickCombo(){
-    /* Will pick which tiles will change colour and in what order */
-
-}
+var LightColoursCIE = DefaultColoursCIE;
+var LightColoursHEX = DefaultColoursHex;
 
 /* changed light to on and after x time off */
-function ToggleLight(LightLocation) {
-    var getState = $.getJSON(BuildLightURI(element), function (data)
+function ToggleLight(LightLocation, LightColour) {
+
+    var getState = $.getJSON(BuildLightURI(LightLocation), function (data)
     {
         var lightState = {"on" : true};
 
@@ -22,17 +28,18 @@ function ToggleLight(LightLocation) {
             type: "PUT",
             data: JSON.stringify(lightState)
         })
+
+
     });
 }
-
 function ToggleAllLights(Colour){
 
 }
 
-function BuildLightURI(element)
+function BuildLightURI(LightID)
 {
     var BaseURI = "http://192.168.0.50/api/stlaB2I6VZ8O80Qepc-1xfmLrHgyTFvB9IGupaQz/lights/";
-    return BaseURI + element.attr("id")+"/";
+    return BaseURI + LightID+"/";
 }
 
 function PlaySequence(){
@@ -42,14 +49,8 @@ function PlaySequence(){
     }
 }
 
-
-function EndOfSequence(){
-
-
-    return true;
-}
-
 function WinRoundEffects(){
-
+    ToggleAllLights("green");
+    ToggleAllPageGrids("green");
 }
 
