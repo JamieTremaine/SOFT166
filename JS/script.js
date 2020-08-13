@@ -16,28 +16,33 @@ function UncheckOtherSettings(ID){
             document.getElementById("protanopia").checked = false;
             document.getElementById("deuteranopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColoursCIE = DefaultColoursCIE;
+
+            LightColoursHue.Colours = DefaultColoursHue;
             LightColoursHEX = DefaultColoursHex;
+
             break;
 
         case "protanopia":
             document.getElementById("deuteranopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColoursCIE = ProtanopiaCIE;
+
+            LightColoursHue.Colours = ProtanopiaHue;
             LightColoursHEX = ProtanopiaHex;
             break;
 
         case "deuteranopia":
             document.getElementById("protanopia").checked = false;
             document.getElementById("tritanopia").checked = false;
-            LightColoursCIE = DeuteranopiaCIE;
+
+            LightColoursHue = DeuteranopiaHue;
             LightColoursHEX = DeuteranopiaHex;
             break;
 
         case "tritanopia":
             document.getElementById("protanopia").checked = false;
             document.getElementById("deuteranopia").checked = false;
-            LightColoursCIE = TritanopiaCIE;
+
+            LightColoursHue = TritanopiaHue;
             LightColoursHEX = TritanopiaHex;
             break;
     }
@@ -46,7 +51,7 @@ function ToggleGrid(ID, type) {
     ID = "#"+ID;
 
     if(type == "correct"){
-        var Colour =  LightColoursHEX[GameInstance.NextInSequence];
+        var Colour =  LightColoursHEX[GameInstance.PosInSequence];
         $( ID ).animate( {backgroundColor: Colour}, "slow" ); /* Background colour animations provided by JQuery colour/ Full reference in file*/
         $( ID ).animate( {backgroundColor: "white"}, "slow" );
     }
@@ -60,11 +65,6 @@ function ToggleAllPageGrids(Colour){
     $( ".grid-item" ).animate( {backgroundColor: "white"}, "slow" );
 
 }
-function ResetGrid(){
-    for(var i=1; i <10; i++){
-        document.getElementById(i).style.backgroundColor = "white";
-    }
-}
 
 function DisableGrid(){
     $(".grid-item").unbind("click");
@@ -77,22 +77,20 @@ function ProcessUserGuess(element){
     if (CorrectGuess)
     {
         ToggleGrid(GuessID, "correct");
-        ToggleLight(GuessID, LightColoursCIE[GameInstance.NextInSequence]);
-        GameInstance.NextInSequence++;
+        ToggleLight(GuessID, LightColoursHue[GameInstance.PosInSequence]);
+        GameInstance.PosInSequence++;
     }
     else{
         ToggleGrid(GuessID, "wrong");
-        ToggleLight(GuessID, "red")
+        /*ToggleAllLight(GuessID, "insertredhuecolour")*/
     }
 
     if(EndOfSequence() == true) {
-        /*WinRoundEffects();*/
+        WinRoundEffects();
     }
-    else{
-        return;
-    }
+    else{return;}
 
-    if(WasLastRound())
+    if(GameInstance.Round === 3) /*if is last round*/
     {
         DisableGrid();
         PlayEndEffects();
@@ -115,7 +113,7 @@ $(document).ready(function () {
     });
 
     $('input[type="checkbox"]').click(function(){
-        if($(this).prop("checked") === true){
+        if($(this).prop("checked") == true){
             UncheckOtherSettings(this.id);
             /*SetLightColours(ID);*/
         }
