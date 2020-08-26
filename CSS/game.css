@@ -32,7 +32,7 @@ html, body {
 
 .logo{
     margin: auto;
-    margin-top: 10%;
+    margin-top: 1%;
 
     font-family: 'Caveat', cursive;
     font-size: 110px;
@@ -62,50 +62,16 @@ html, body {
     border-color: #cb1829 transparent transparent;
     border-radius: 50%;
 
-/* css for curved underline adapted from
-https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underline/51148652*/
-}
-
-.about-rules{
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-align: center;
-    font-weight: lighter;
+    /* css for curved underline adapted from
+    https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underline/51148652*/
 }
 
 .collapse{
     background-color: transparent;
 }
 
-#rule-image:hover #rule-image-path{
-    fill-rule: nonzero;
-}
-
-#about-image:hover #about-image-path{
-    fill-rule: nonzero;
-}
-
-.flip {
-    transform: rotate(-180deg);
-}
-
 .game-col{
     text-align: center;
-}
-#play-btn{
-    font-weight: bold;
-
-    width: 155px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    font-family: 'Bangers', cursive;
-    letter-spacing: 2px;
-
-    border-width: 5px;
-    border-radius: 50px;
-    background-color: transparent
 }
 
 
@@ -207,22 +173,12 @@ input:checked + .slider:before {
     padding-top: 50%;
 }
 
-@media (max-width:400px) {
+@media (max-width:450px) {
     .grid-item{
-        height: 50px;
+        height: 100px;
     }
 }
 
 footer{
     bottom: 0vh;
 }
-
-
-
-
-
-
-
-
-
-

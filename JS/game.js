@@ -7,7 +7,6 @@ function CreateSequence(){
         var GeneratedLightID = Math.floor((Math.random() * 6) + 1);
         Sequence.push(GeneratedLightID);
     }
-    window.alert(Sequence);
     return Sequence;
 }
 
@@ -30,7 +29,7 @@ function StartNextRound(){
     GameInstance.Round++;
     GameInstance.Seqence = CreateSequence();
     GameInstance.PosInSequence = 0;
-    /*PlaySequence();*/
+    PlaySequence();
 }
 
 function EndOfSequence(){

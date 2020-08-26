@@ -14,13 +14,11 @@
 
     <link rel="stylesheet" href="../CSS/index.css">
 
-    <script src="../JS/JQueryColour.js"></script>
-    <script src="../JS/game.js"></script>
     <script src="../JS/lights.js"></script>
-    <script src="../JS/script.js"></script>
+    <script src="../JS/index.js"></script>
 </head>
 
-<body onload="SetupLights()">
+<body>
 <!--Navbar-->
 <nav class="navbar navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,31 +102,10 @@
     <!--Game-->
     <div class="btn-row row justify-content-center">
         <div class="game-col col-8">
-            <button id="play-btn" type="button" class="btn btn-lg btn-outline-dark btn-light bg-light">Play</button>
+            <a id="play-btn" type="button" class="btn btn-lg btn-outline-dark btn-light bg-light" href="game.html">Play</a>
         </div>
     </div>
 
-    <div class="grid-style-row row justify-content-center">
-        <div class="grid-col col-9">
-            <script>$('.grid-col').hide()</script>
-            <div class="grid-container">
-                <div class="grid-content-row row justify-content-center">
-                    <div id="1" class="grid-item col-lg-auto">one</div>
-                    <div id="4" class="grid-item col-lg-auto">four</div>
-
-                </div>
-                <div class="grid-content-row row justify-content-center">
-                    <div id="2" class="grid-item col-lg-auto">two</div>
-                    <div id="5" class="grid-item col-lg-auto">five</div>
-
-                </div>
-                <div class="grid-content-row row justify-content-center">
-                    <div id="3" class="grid-item col-lg-auto">three</div>
-                    <div id="6" class="grid-item col-lg-auto">six</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 </body>
 <footer>

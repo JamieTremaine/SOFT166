@@ -44,7 +44,7 @@ function ToggleLight(LightLocation, LightColour) {
         });
         },2000)
 }
-function ToggleAllLights(Colour){
+function ToggleAllLights(){
 
     for (let LightLocation=1; LightLocation < 7; LightLocation++){
         /*Light on*/

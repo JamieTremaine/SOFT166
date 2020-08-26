@@ -1,12 +1,12 @@
-function PlayButtonClick() {
+function PageInit() {
     FadeEffects();
+    SetupLights();
     StartGame();
 }
 
 function FadeEffects(){
-    $('#play-btn').fadeOut('slow', function() {
-        $(".logo").animate({marginTop: "0%"});
-        $('.grid-col').fadeIn("slow");
+    $('.logo').fadeIn('slow', function() {
+        $('.grid-container').fadeIn('slow');
     });
 }
 
@@ -82,7 +82,6 @@ function ProcessUserGuess(element){
     }
     else{
         ToggleGrid(GuessID, "wrong");
-        /*ToggleAllLight(GuessID, "insertredhuecolour")*/
     }
 
     if(EndOfSequence() == true) {
@@ -99,15 +98,6 @@ function ProcessUserGuess(element){
 }
 
 $(document).ready(function () {
-
-    $(".flippable").click(function(){
-        $(this).toggleClass("flip");
-    });
-
-    $("#play-btn").click(function(){
-        PlayButtonClick();
-    });
-
     $(".grid-item").click(function() {
         ProcessUserGuess(this);
     });
