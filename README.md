@@ -34,6 +34,6 @@ A demonstration of the project can be found here. Because the lights cannot be s
 
 Initally the project was all contained to one webpage. To better conform to the spec the main page and the game were split. An earlier version with everything on a single page would be preferal to use.
 
-![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/InitalDesign.gif "Inital Design")
+![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/InitialDesign.gif "Inital Design")
 
 
