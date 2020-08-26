@@ -9,7 +9,7 @@ The game starts as soon as the play button is pressed with three rounds in total
 
 A correct answer will cause the box on the page and the light in the room to flash the same colour, an incorrect answer will cause all lights to flash red. Getting an incorrect answer will not fail the level or stop the game, the user can continue guessing after getting an incorrect answer.
 
-Colour settings can be changed at any point during the game even whilst lights are being turnt on or off, however changes will not effect a light that is already turned on until it has been turned off
+Colour settings can be changed at any point during the game even whilst lights are being turnt on or off, however changes will not effect a light that is already turned on until it has been turned off.
 
 ### Features
 * Colour blind settings
@@ -35,5 +35,14 @@ A demonstration of the project can be found here. Because the lights cannot be s
 Initally the project was all contained to one webpage. To better conform to the spec the main page and the game were split. An earlier version with everything on a single page would be preferal to use.
 
 ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/InitialDesign.gif "Inital Design")
+
+### Additional Resorces
+
+All additional resorces used in the project are appropriately commented when used.
+
+* Jquery-Color - https://github.com/jquery/jquery-color
+* Logo underline CSS - https://stackoverflow.com/questions/51148460/how-can-i-make-a-curved-text-underline/51148652*/
+* Slider CSS - https://www.w3schools.com/howto/howto_css_switch.asp
+
 
 
