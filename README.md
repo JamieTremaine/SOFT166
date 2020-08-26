@@ -1,6 +1,6 @@
 # SOFT166
 
-Website created using HTML, CSS and Javascript/Jquery. Demonstrates basic knowledge of API and HTML requests usage by manipulating Phillips Hue smart lights using JSON.
+Website created using HTML, CSS and Javascript/Jquery. Demonstrates basic knowledge of API and HTML requests usage by manipulating Phillips Hue smart lights using JSON. Bootstrap was used as a general framework with custom CSS used where needed. 
 
 ### Usage
 Designed specifically for usage in the University of Plymouth using samrt lights, although functional outside of the university it is advisable to only use inside the university for the full experience of the project.
@@ -15,6 +15,7 @@ Colour settings can be changed at any point during the game even whilst lights a
 * Colour blind settings
 * Multiple browser support
 * Suitable for mobile and tablets
+* Responsive design
 
 ### Testing
 
