@@ -29,3 +29,11 @@ Colour settings can be changed at any point during the game even whilst lights a
 
 
 A demonstration of the project can be found here. Because the lights cannot be seen alert messages are provided, in the full project the lights would flash in the correct sequence then the user would recite the sequence. - https://youtu.be/SHHy6xF8UaE
+
+### Initial Design
+
+Initally the project was all contained to one webpage. To better conform to the spec the main page and the game were split. An earlier version with everything on a single page would be preferal to use.
+
+![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/InitalDesign.gif "Inital Design")
+
+
