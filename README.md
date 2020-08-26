@@ -11,4 +11,8 @@ Designed specifically for usage in the University of Plymouth using samrt lights
 
 ### Testing
 
+| Chrome        | Firefox         | Edge|
+| ------------- | ------------- |------- |
+| ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/chrome.gif "Chrome")  |  ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/firefox.gif "Firefox")  |![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/edge.gif "Edge") |
+
 ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/chrome.gif "Chrome") ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/firefox.gif "Firefox") ![alt text](https://github.com/JamieTremaine/SOFT166/blob/master/Documentation/Img/edge.gif "Edge")
